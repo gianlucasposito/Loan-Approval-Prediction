@@ -36,3 +36,19 @@ This project develops a machine learning model to predict loan approval based on
 - Deploy the model for real-world application.
 - Periodically audit for bias and fairness.
 - Integrate real-time explainability tools to aid users.
+
+
+
+Saving the Model: The trained SVM classifier is saved using the pickle library. The model is serialized and saved to a file (e.g., loan_status_model.pkl) to be used for future predictions without the need for retraining.
+
+Streamlit App: A web application is developed using Streamlit to create an interactive interface for users to input loan application details. The input fields include features such as gender, marital status, income, loan amount, etc. After entering the details and clicking the "Predict Loan Status" button, the trained SVM model is loaded, and the loan status is predicted based on the provided information.
+
+
+
+
+
+
+
+
+
+
