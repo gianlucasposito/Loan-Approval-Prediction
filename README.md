@@ -11,7 +11,7 @@ Furthermore, a user-friendly app is deployed using the Streamlit library, which 
 
 The project uses data from the Loan Prediction Kaggle competition.
 
-Key Variables
+### Key Variables
 - **Loan_ID:** Unique identifier for each loan application.
 - **Demographic Details:**
   - `Gender`, `Married`, `Dependents`
@@ -23,7 +23,6 @@ Key Variables
   - `Property_Area`
 - **Target Variable:**
   - `Loan_Status` (Binary: Approved `Y` or Rejected `N`)
-
 
 
 ## Key Data Analysis Features
