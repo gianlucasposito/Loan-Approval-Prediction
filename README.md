@@ -2,15 +2,16 @@
 
 ## Overview
 
-This project develops a machine learning model to predict loan approval based on applicant details. The goal is to enhance decision-making for loan applications by utilizing historical data. Additionally, the project emphasizes explainable AI to ensure transparency and build trust in predictions. 
+This project develops a machine learning model to predict loan approval based on applicant details. 
+The loan prediction problem involves determining the likelihood that a loan application will be approved or rejected, given various features such as income, loan amount, and credit history. 
+The goal is to enhance decision-making for loan applications by utilizing historical data. Additionally, the project emphasizes explainable AI to ensure transparency and build trust in predictions. 
 Furthermore, a user-friendly app is deployed using the Streamlit library, which can be accessed here: [Streamlit App](#).
 
 ## Dataset and Variables
 
-### Dataset
-The project uses two datasets:
-1. **Training Dataset:** Used to train machine learning models.
-2. **Test Dataset:** Reserved for evaluating model performance.
+
+
+
 
 ### Key Variables
 - **Loan_ID:** Unique identifier for each loan application.
@@ -25,9 +26,9 @@ The project uses two datasets:
 - **Target Variable:**
   - `Loan_Status` (Binary: Approved `Y` or Rejected `N`)
 
----
 
-## Key Features
+
+## Key Data Analysis Features
 
 - **Data Preprocessing:** Handling missing values, outliers, and skewed distributions with transformations.
 - **Feature Engineering:** Creation of new features like log-transformed income and balance variables to improve model performance.
@@ -36,6 +37,17 @@ The project uses two datasets:
   - Random Forest was selected for its performance (highest F1-score) and interpretability.
 - **Bias Reduction:** Removed demographic features (e.g., gender, marital status) to ensure fairness and focus on financial predictors.
 - **Model Explanation:** Used SHAP values to provide interpretable insights into individual predictions.
+
+
+## Workflow
+
+1. **Data Cleaning:** Missing values filled; outliers addressed.
+2. **Feature Engineering:** Log transformations applied to reduce skewness.
+3. **Model Selection:** Hyperparameter tuning with GridSearchCV.
+4. **Model Explanation:** SHAP library used for feature importance and prediction explainability.
+5. **Bias Mitigation:** Removal of features prone to introducing bias.
+
+
 
 ---
 
@@ -47,20 +59,10 @@ The project uses two datasets:
 - **Key Predictors:** Credit history, total income, balance income, and EMI were identified as the most impactful features for loan approval.
 - **Ethical Considerations:** Steps were taken to reduce bias by excluding demographic features with low predictive power and potential for discrimination.
 
-### Model Performance
-1. **Evaluation Metric:** F1-score (to handle class imbalance).
-2. **Top Model:** Random Forest with an F1-score higher than KNN, SVM, and XGBoost.
-3. **Feature Importance:** Credit history was the most influential feature, followed by income-related attributes.
+
 
 ---
 
-## Workflow
-
-1. **Data Cleaning:** Missing values filled; outliers addressed.
-2. **Feature Engineering:** Log transformations applied to reduce skewness.
-3. **Model Selection:** Hyperparameter tuning with GridSearchCV.
-4. **Model Explanation:** SHAP library used for feature importance and prediction explainability.
-5. **Bias Mitigation:** Removal of features prone to introducing bias.
 
 ---
 
