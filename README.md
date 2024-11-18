@@ -4,7 +4,7 @@
 
 This project develops a machine learning model to predict loan approval based on applicant details. 
 The loan prediction problem involves determining the likelihood that a loan application will be approved or rejected, given various features such as income, loan amount, and credit history. 
-The goal is to enhance decision-making for loan applications by utilizing historical data. Additionally, the project emphasizes explainable AI to ensure transparency and build trust in predictions. 
+The goal is to enhance decision-making for loan applications by using historical data. Additionally, the project emphasizes explainable AI to ensure transparency and build trust in predictions. 
 Furthermore, a user-friendly app is deployed using the Streamlit library, which can be accessed here: [Streamlit App](#).
 
 ## Dataset and Variables
