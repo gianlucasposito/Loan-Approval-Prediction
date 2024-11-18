@@ -36,7 +36,7 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 
 ## Data Insights
 
-- **Key Predictors:** Credit history, total income, balance income, and EMI were identified as the most impactful features for loan approval.
+- **Top Predictors:** Credit history, total income, balance income, and EMI were identified as the most impactful features for loan approval.
 - **Ethical Considerations:** Exclude demographic features with low predictive power and potential for discrimination.
 
 ## Model Deployment and Usage
@@ -47,6 +47,25 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 👉 [Go to the App](#)
 
 ---
+
+### Steps to Run
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-repo/loan-approval-prediction.git
+    cd loan-approval-prediction
+    ```
+
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run the application:
+    ```bash
+    streamlit run app.py
+    ```
+
+
 
 ## Contributions
 
