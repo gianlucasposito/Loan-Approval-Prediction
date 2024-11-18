@@ -9,9 +9,7 @@ Furthermore, a user-friendly app is deployed using the Streamlit library, which 
 
 ## Dataset and Variables
 
-
-
-
+The project uses data from the Loan Prediction Kaggle competition.
 
 ### Key Variables
 - **Loan_ID:** Unique identifier for each loan application.
