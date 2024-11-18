@@ -20,7 +20,6 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 | Loan Details     | `LoanAmount`, `Loan_Amount_Term`, `Credit_History`  | Loan and credit details.                |
 | Target Variable  | `Loan_Status`                                       | Approved (`Y`) or Rejected (`N`).       |
 
----
 
 ## Data Analysis Workflow
 
@@ -48,11 +47,12 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 
 ---
 
-### Steps to Run
+## Steps to Run
+
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/loan-approval-prediction.git
-    cd loan-approval-prediction
+    git clone https://github.com/gianlucasposito/Loan-Approval-Prediction
+    cd Loan-Approval-Prediction
     ```
 
 2. Install dependencies:
@@ -64,8 +64,6 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
     ```bash
     streamlit run app.py
     ```
-
-
 
 ## Contributions
 
