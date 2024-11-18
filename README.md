@@ -1,15 +1,9 @@
----
-title: "Loan Prediction and Explainable AI"
-author: "Your Name"
-date: "`r Sys.Date()`"
-output: html_document
----
-
 # Loan Approval Prediction
 
 ## Overview
 
-This project develops a machine learning model to predict loan approval based on applicant details. The goal is to enhance decision-making for loan applications by using historical data. Additionally, the project focuses on explainable AI to ensure transparency and trust in predictions.
+This project develops a machine learning model to predict loan approval based on applicant details. The goal is to enhance decision-making for loan applications by utilizing historical data. Additionally, the project emphasizes explainable AI to ensure transparency and build trust in predictions. 
+Furthermore, a user-friendly app is deployed using the Streamlit library, which can be accessed here: [Streamlit App](#).
 
 ---
 
