@@ -9,9 +9,8 @@ Furthermore, a user-friendly app is deployed using the Streamlit library, which 
 
 ## Dataset and Variables
 
-The project uses data from the Loan Prediction Kaggle competition.
+The project uses data from the Loan Prediction Kaggle competition. The dataset includes various key variables that contribute to predicting loan approval:
 
-### Key Variables
 - **Loan_ID:** Unique identifier for each loan application.
 - **Demographic Details:**
   - `Gender`, `Married`, `Dependents`
