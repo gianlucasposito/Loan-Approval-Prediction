@@ -5,20 +5,6 @@
 This project develops a machine learning model to predict loan approval based on applicant details. The goal is to enhance decision-making for loan applications by utilizing historical data. Additionally, the project emphasizes explainable AI to ensure transparency and build trust in predictions. 
 Furthermore, a user-friendly app is deployed using the Streamlit library, which can be accessed here: [Streamlit App](#).
 
----
-
-## Key Features
-
-- **Data Preprocessing:** Handling missing values, outliers, and skewed distributions with transformations.
-- **Feature Engineering:** Creation of new features like log-transformed income and balance variables to improve model performance.
-- **Model Training and Comparison:**
-  - Evaluated models: KNN, SVM, Random Forest, and XGBoost.
-  - Random Forest was selected for its performance (highest F1-score) and interpretability.
-- **Bias Reduction:** Removed demographic features (e.g., gender, marital status) to ensure fairness and focus on financial predictors.
-- **Model Explanation:** Used SHAP values to provide interpretable insights into individual predictions.
-
----
-
 ## Dataset and Variables
 
 ### Dataset
@@ -40,6 +26,20 @@ The project uses two datasets:
   - `Loan_Status` (Binary: Approved `Y` or Rejected `N`)
 
 ---
+
+## Key Features
+
+- **Data Preprocessing:** Handling missing values, outliers, and skewed distributions with transformations.
+- **Feature Engineering:** Creation of new features like log-transformed income and balance variables to improve model performance.
+- **Model Training and Comparison:**
+  - Evaluated models: KNN, SVM, Random Forest, and XGBoost.
+  - Random Forest was selected for its performance (highest F1-score) and interpretability.
+- **Bias Reduction:** Removed demographic features (e.g., gender, marital status) to ensure fairness and focus on financial predictors.
+- **Model Explanation:** Used SHAP values to provide interpretable insights into individual predictions.
+
+---
+
+
 
 ## Key Findings
 
