@@ -11,7 +11,7 @@ Furthermore, a user-friendly app is deployed using the Streamlit library, which 
 
 The project uses data from the Loan Prediction Kaggle competition.
 
-### Key Variables
+Key Variables
 - **Loan_ID:** Unique identifier for each loan application.
 - **Demographic Details:**
   - `Gender`, `Married`, `Dependents`
@@ -71,13 +71,7 @@ The project uses data from the Loan Prediction Kaggle competition.
 
 ---
 
-## Future Work
 
-1. Deploy the model for real-world application.
-2. Periodically audit for bias and fairness.
-3. Integrate real-time explainability tools to aid users.
-
----
 
 ## Model Deployment and Usage
 
@@ -88,21 +82,11 @@ The project uses data from the Loan Prediction Kaggle competition.
 
 ---
 
-## Getting Started
-
-To explore this project:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/loan-prediction.git
-
 
 ## Contributions
 
 Contributions are welcome! Please open an issue or submit a pull request for enhancements or bug fixes.
 
-## Install dependecies
-
-pip install -r requirements.txt
 
 
 
