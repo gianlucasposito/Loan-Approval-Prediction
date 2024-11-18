@@ -40,8 +40,8 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 
 ## Model Deployment and Usage
 
-1. **Saving the Model:** The trained Random Forest classifier is saved using the pickle library.
-2. **Streamlit App:** A web application is developed using **Streamlit** to create an interactive interface for users to input loan application details.
+- **Saving the Model:** The trained Random Forest classifier is saved using the pickle library.
+- **Streamlit App:** A web application is developed using **Streamlit** to create an interactive interface for users to input loan application details.
    
 ---
 
