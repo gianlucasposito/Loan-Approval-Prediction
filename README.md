@@ -11,19 +11,16 @@ This project predicts loan approval using machine learning models trained on a d
 
 ## Dataset and Variables
 
-The project uses data from the Loan Prediction Kaggle competition. The dataset includes various key variables that contribute to predicting loan approval:
+The project uses the Loan Prediction Dataset from Kaggle, containing features across demographic, socioeconomic, and financial categories:
 
-- **Loan_ID:** Unique identifier for each loan application.
-- **Demographic Details:**
-  - `Gender`, `Married`, `Dependents`
-- **Socioeconomic Factors:**
-  - `Education`, `Self_Employed`, `ApplicantIncome`, `CoapplicantIncome`
-- **Loan Details:**
-  - `LoanAmount`, `Loan_Amount_Term`, `Credit_History`
-- **Geographic Information:**
-  - `Property_Area`
-- **Target Variable:**
-  - `Loan_Status` (Binary: Approved `Y` or Rejected `N`)
+| **Feature Type** | **Features**                                         | **Description**                         |
+|------------------|-----------------------------------------------------|-----------------------------------------|
+| Demographic      | `Gender`, `Married`, `Dependents`                   | Applicant details.                      |
+| Socioeconomic    | `Education`, `Self_Employed`, `ApplicantIncome`     | Income and education info.              |
+| Loan Details     | `LoanAmount`, `Loan_Amount_Term`, `Credit_History`  | Loan and credit details.                |
+| Target Variable  | `Loan_Status`                                       | Approved (`Y`) or Rejected (`N`).       |
+
+---
 
 ## Data Analysis Workflow
 
