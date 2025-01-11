@@ -24,7 +24,7 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 ## Data Analysis Workflow
 
 - **Data Preprocessing:** Handling missing values, outliers, and skewed distributions with transformations.
-- **Feature Engineering:** Creation of new features like log-transformed income and balance variables to improve model performance.
+- **Feature Engineering:** Creation of new features based on domain knowledge to improve model performance.
 - **Data Visualization:** Visual exploration of key variables and relationships to understand data distributions and correlations.
 - **Model Training and Comparison:**
   - Evaluated models: KNN, SVM, Random Forest, and XGBoost.
