@@ -80,18 +80,22 @@ def main():
    
    # Useer input in the sidebar
    def user_input_features():
+       st.sidebar.subheader('Applicant Details')
        Gender = st.sidebar.selectbox("Gender", ["Male", "Female"])
        Married = st.sidebar.selectbox("Marital Status", ["Yes", "No"])
        Dependents = st.sidebar.text_input("Number of Dependents", "0")
        Education = st.sidebar.selectbox("Education Level", ["Graduate", "Not Graduate"])
        Self_Employed = st.sidebar.selectbox("Self Employed", ["Yes", "No"])
-       ApplicantIncome = st.sidebar.text_input("Applicant Income (in USD)", "1000")
-       CoapplicantIncome = st.sidebar.text_input("Coapplicant Income (in USD)", "0")
+       
+       st.sidebar.subheader("Income Details")
+       ApplicantIncome = st.sidebar.text_input(" Monthly Applicant Income (in USD)", "1000")
+       CoapplicantIncome = st.sidebar.text_input("Monthly Coapplicant Income (in USD)", "0")
+       
+       st.sidebar.subheader("Loan Details")
        LoanAmount = st.sidebar.text_input("Loan Amount (in USD thousands)","100")
        Loan_Amount_Term = st.sidebar.slider("Loan Term (in months)", 12, 420, 120)
        Credit_History = st.sidebar.selectbox("Credit History (Good: 1, Bad: 0)", [1, 0])
-       Property_Area = st.sidebar.selectbox("Property Area", ["Urban", "Semiurban", "Rural"])
-
+       Property_Area = st.sidebar.selectbox("Property Area", ["Urban", "Semiurban", "Rural"])   
       
        data = {
             "Gender": 1 if Gender == "Male" else 0,
@@ -115,62 +119,87 @@ def main():
        
        st.subheader("User Input Features")
        st.write(user_input)
+   
        
-   # Load model and scaler
-   model = load_model()
-   scaler = load_scaler()
+   # Submit button to trigger the prediction
+   if st.sidebar.button("Submit"): 
    
-   # Preprocess data
-   processed_data  =  preprocess_data(user_input, scaler)
-   
-   # Make prediction
-   prediction = model.predict(processed_data)
-   # prediction_proba = model.predict_proba(processed_data)
-
-   with col2:    
-       st.subheader("Prediction Result")
-       loan_status = "Approved" if prediction[0] == 1 else "Rejected"
-       st.write(f"Your loan is **{loan_status}**")
-       # st.write("Prediction Probability:")
-       # st.write(prediction_proba)
+       # Load model and scaler
+       model = load_model()
+       scaler = load_scaler()
        
-       # Shap interpretation
-       st.subheader("Model Explanation using SHAP")
-       st.write("""
-    SHAP (SHapley Additive exPlanations) values explain the impact of each feature on the model's prediction:
+       # Preprocess data
+       processed_data  =  preprocess_data(user_input, scaler)
+       
+       # Make prediction
+       prediction = model.predict(processed_data)
+       # prediction_proba = model.predict_proba(processed_data)
     
-    - **Waterfall Plot:** Provides a detailed breakdown of how each feature influenced the prediction.
-    - The base value is the average model output over the training data.
-    - Each feature's contribution adjusts the base value to arrive at the final prediction.
-    """)
+       with col2:    
+           st.subheader("Prediction Result")
+           loan_status = "Approved" if prediction[0] == 1 else "Rejected"
+           st.write(f"Your loan is **{loan_status}**.")
+           # st.write("Prediction Probability:")
+           # st.write(prediction_proba)
+           
+           # Shap interpretation
+           st.subheader("Model Explanation using SHAP")
+           st.write("""
+        SHAP (SHapley Additive exPlanations) values explain the impact of each feature on the model's prediction:
+        
+        - The Waterfall Plot provides a detailed breakdown of how each feature influenced the prediction.
+        - The base value is the average model output over the training data.
+        - Positive and negative contributions from individual features are combined to adjust the base value, culminating in the model’s final prediction.
+        """)
+        
+       # Fit the explainer
+       explainer = shap.Explainer(model)
+        
+       # Calculates the SHAP values
+       shap_values = explainer(processed_data)
     
-   # Fit the explainer
-   explainer = shap.Explainer(model)
+     
+       # Choose the first sample and the first output
+       shap_values_sample_output = shap_values.values[0, :, 0]  # 0 for the first output
     
-   # Calculates the SHAP values
-   shap_values = explainer(processed_data)
+       # Get the corresponding base value for the first output
+       base_value = shap_values.base_values[0, 0]
+    
+       # Get the data for the first sample
+       data = shap_values.data[0]
+       
+       with col2:
+           # Use waterfall plot for detailed explanation
+           st.write("The waterfall Plot shows the contribution of each feature to the final prediction for the loan application.")
+       
+           # Plot the waterfall chart
+           fig_inc = plt.figure()
+           shap.waterfall_plot(shap.Explanation(values=shap_values_sample_output,
+                                         base_values=base_value,
+                                         data=data,
+                                         feature_names=["Credit History", "Total Income", "EMI", "Balance Income"]))
+           st.pyplot(fig_inc)
+           
+           
 
- 
-   # Choose the first sample and the first output
-   shap_values_sample_output = shap_values.values[0, :, 0]  # 0 for the first output
-
-   # Get the corresponding base value for the first output
-   base_value = shap_values.base_values[0, 0]
-
-   # Get the data for the first sample
-   data = shap_values.data[0]
-   
-   with col2:
-       # Use waterfall plot for detailed explanation
-       st.write("The waterfall Plot shows the contribution of each feature to the final prediction for the loan application.")
-   
-       # Plot the waterfall chart
-       fig_inc = plt.figure()
-       shap.waterfall_plot(shap.Explanation(values=shap_values_sample_output,
-                                     base_values=base_value,
-                                     data=data,
-                                     feature_names=["Credit History", "Total Income", "EMI", "Balance Income"]))
-       st.pyplot(fig_inc)
+           st.write(
+                "The **Total Income** feature is the sum of Applicant Income and Co-applicant Income. "
+                "Higher total income indicates greater financial capability, which may correlate with a higher probability of loan approval."
+            )
+            
+            
+           st.write(
+                "**EMI** represents the fixed monthly payment required to repay the loan over the specified term. "
+                "It is calculated as the ratio of the loan amount to the loan term. "
+                "Applicants with high EMI might face greater financial strain, potentially lowering their ability to keep up with payments."
+            )
+            
+            
+           st.write(
+                "**Balance Income** is the income remaining after the EMI has been deducted. "
+                "A higher balance income indicates sufficient funds are available even after covering loan payments, "
+                "enhancing the likelihood of loan repayment and increasing the chances of loan approval."
+            )
 
 
 if __name__ == "__main__":
