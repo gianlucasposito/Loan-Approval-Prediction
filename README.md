@@ -17,7 +17,7 @@ The project uses the Loan Prediction Dataset from Kaggle, containing features ac
 |------------------|-----------------------------------------------------|-----------------------------------------|
 | Demographic      | `Gender`, `Married`, `Dependents`                   | Applicant details.                      |
 | Socioeconomic    | `Education`, `Self_Employed`, `ApplicantIncome`     | Income and education info.              |
-| Loan Details     | `LoanAmount`, `Loan_Amount_Term`, `Credit_History`  | Loan and credit details.                |
+| Loan Details     | `LoanAmount`, `Loan_Amount_Term`, `Credit_History`, `Property_Area`  | Loan and credit details.                |
 | Target Variable  | `Loan_Status`                                       | Approved (`Y`) or Rejected (`N`).       |
 
 
