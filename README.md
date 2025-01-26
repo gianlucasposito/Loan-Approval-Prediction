@@ -7,7 +7,7 @@ This project predicts loan approval using machine learning models trained on a d
 - Promote transparency through explainable AI techniques like SHAP.
 - Provide a Streamlit web app for real-time, user-friendly predictions.
 
-👉 [**Access the Application**](#)
+👉 [**Access the Application**](#https://loanapprover.streamlit.app/)
 
 ## Dataset and Variables
 
