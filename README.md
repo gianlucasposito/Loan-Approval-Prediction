@@ -5,7 +5,7 @@
 This project predicts loan approval using machine learning models trained on a dataset of applicant details. It aims to:
 - Enhance decision-making in loan processing.
 - Promote transparency through explainable AI techniques like SHAP.
-- Provide a **Streamlit** web app for real-time, user-friendly predictions.
+- Provide a Streamlit web app for real-time, user-friendly predictions.
 
 👉 [**Access the Application**](#)
 
