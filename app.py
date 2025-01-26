@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import pickle
 import shap
 import matplotlib.pyplot as plt
 import numpy as np
@@ -180,26 +179,12 @@ def main():
                                          feature_names=["Credit History", "Total Income", "EMI", "Balance Income"]))
            st.pyplot(fig_inc)
            
-           
-
-           st.write(
-                "The **Total Income** feature is the sum of Applicant Income and Co-applicant Income. "
-                "Higher total income indicates greater financial capability, which may correlate with a higher probability of loan approval."
-            )
-            
-            
-           st.write(
-                "**EMI** represents the fixed monthly payment required to repay the loan over the specified term. "
-                "It is calculated as the ratio of the loan amount to the loan term. "
-                "Applicants with high EMI might face greater financial strain, potentially lowering their ability to keep up with payments."
-            )
-            
-            
-           st.write(
-                "**Balance Income** is the income remaining after the EMI has been deducted. "
-                "A higher balance income indicates sufficient funds are available even after covering loan payments, "
-                "enhancing the likelihood of loan repayment and increasing the chances of loan approval."
-            )
+           st.subheader("Feature Insights")
+           st.markdown("""
+            - **Total Income**: Sum of applicant income and co-applicant income. Higher total income generally increases the chances of loan approval.
+            - **EMI**: Fixed monthly payment calculated as loan amount divided by loan term. Lower EMI reduces financial burden.
+            - **Balance Income**: Income remaining after paying EMI. Higher balance income indicates better repayment capability.
+            """)
 
 
 if __name__ == "__main__":
